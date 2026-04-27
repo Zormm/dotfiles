@@ -1,11 +1,10 @@
-
 {
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/notification","clock","custom/pacman","tray"],
+        "modules-left": ["clock","custom/pacman", "hyprland/window"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["group/expand","bluetooth","network","battery"],
+        "modules-right": ["network","temperature","cpu","memory"],
 
 
         "hyprland/workspaces": {
@@ -18,12 +17,6 @@
             "persistent-workspaces": {
                 "*": [ 1,2,3,4,5 ]
             }
-        },
-        "custom/notification": {
-            "tooltip": false,
-            "format": "",
-            "on-click": "swaync-client -t -sw",
-            "escape": true
         },
         "clock": {
             "format": "{:%I:%M:%S %p} ",
@@ -48,38 +41,6 @@
             "tooltip-format-ethernet": "{ifname} 🖧 ",
             "on-click": "kitty nmtui"
         },
-        "bluetooth": {
-            "format-on": "󰂯",
-            "format-off": "BT-off",
-            "format-disabled": "󰂲",
-            "format-connected-battery": "{device_battery_percentage}% 󰂯",
-            "format-alt": "{device_alias} 󰂯",
-            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
-            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
-            "on-click-right": "blueman-manager",
-        }, 
-        "battery": {
-            "interval":30,
-            "states": {
-                "good": 95,
-                "warning": 30,
-                "critical": 20
-            },
-            "format": "{capacity}% {icon}",
-            "format-charging": "{capacity}% 󰂄",
-            "format-plugged": "{capacity}% 󰂄 ",
-            "format-alt": "{time} {icon}",
-            "format-icons": [
-                "󰁻",
-            "󰁼",
-            "󰁾",
-            "󰂀",
-            "󰂂",
-            "󰁹"
-            ],
-        },
         "custom/pacman": {
             "format": "󰅢 {}",
             "interval": 30,   
@@ -89,44 +50,21 @@
             "signal": 8,
             "tooltip": false,
         },
-        "custom/expand": {
-            "format": "",
-            "tooltip": false
-        },
-        "custom/endpoint":{
-            "format": "|",
-            "tooltip": false
-        },
-        "group/expand": {
-            "orientation": "horizontal",
-            "drawer": {
-                "transition-duration": 600,
-                "transition-to-left": true,
-                "click-to-reveal": true
-            },
-            "modules": ["custom/expand", "custom/colorpicker","cpu","memory","temperature","custom/endpoint"],
-        },
-        "custom/colorpicker": {
-            "format": "{}",
-            "return-type": "json",
-            "interval": "once",
-            "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
-            "on-click": "~/.config/waybar/scripts/colorpicker.sh",
-            "signal": 1
-        },
         "cpu": {
-            "format": "󰻠",
-            "tooltip": true
+            "interval": 10,
+            "format": "{usage}% ",
+            "max-length": 10
         },
         "memory": {
-            "format": ""
+          "interval": 30,
+          "format": "{}% ",
+          "max-length": 10
         },
         "temperature": {
-            "critical-threshold": 80,
-            "format": "",
-        },
-        "tray": {
-            "icon-size": 14,
-            "spacing": 10
+          // "thermal-zone": 2,
+          // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+          // "critical-threshold": 80,
+          // "format-critical": "{temperatureC}°C ",
+          "format": "{temperatureC}°C "
         },
 } 
