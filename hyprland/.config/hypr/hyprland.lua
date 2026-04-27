@@ -16,7 +16,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
 	output = "DP-1",
-	mode = "3440x1440@x240",
+	mode = "3440x1440@240",
 	position = "0x0",
 	scale = "1",
 })
@@ -255,10 +255,10 @@ hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
 
 -- Move Windows with mainMod + shift + arrow keys
-hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window({ direction = "left" }))
-hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window({ direction = "right" }))
-hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window({ direction = "up" }))
-hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window({ direction = "down" }))
+hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
