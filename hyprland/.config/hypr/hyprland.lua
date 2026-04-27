@@ -36,7 +36,7 @@ hl.monitor({
 local terminal = "ghostty"
 local fileManager = "nautilus"
 local menu = "rofi -show combi"
-local browser = "flatpak run app.zen_browser.zen"
+local browser = "zen-browser"
 
 -------------------
 ---- AUTOSTART ----
