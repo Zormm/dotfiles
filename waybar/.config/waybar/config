@@ -18,8 +18,12 @@
                 "*": [ 1,2,3,4,5 ]
             }
         },
+        "hyprland/window": {
+          "format": "👉 {title}",
+          "separate-outputs": true
+        },
         "clock": {
-            "format": "{:%I:%M:%S %p} ",
+            "format": "{:%I:%M} ",
             "interval": 1,   
             "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
@@ -65,7 +69,7 @@
           "ignored-sinks": ["Easy Effects Sink"]
         },
         "custom/pacman": {
-            "format": "󰅢 {}",
+            "format": "{} 󰅢 ",
             "interval": 30,   
             "exec": "checkupdates | wc -l",
             "exec-if": "exit 0",
