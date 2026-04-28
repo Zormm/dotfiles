@@ -56,6 +56,18 @@ tooltip {
     transition: all .3s ease;
 }
 
+#mpris{
+    padding: 0px 5px;
+    color:@color7;
+    transition: all .3s ease;
+}
+
+#window{
+    padding: 0px 5px;
+    color:@color7;
+    transition: all .3s ease;
+}
+
 #custom-pacman{
     padding: 0px 5px;
     transition: all .3s ease;

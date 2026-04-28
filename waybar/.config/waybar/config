@@ -2,10 +2,25 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["clock","custom/pacman", "hyprland/window"],
+        "modules-left": ["date","clock","custom/pacman", "hyprland/window"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["pulseaudio","network","temperature","cpu","memory"],
+        "modules-right": ["mpris","pulseaudio","network","temperature","cpu","memory"],
 
+
+        "mpris": {
+        	"format": "{player_icon} {title} - {artist}",
+        	"format-paused": "{status_icon} {title} - {artist}",
+        	"player-icons": {
+        		"default": "▶",
+        		"mpv": "🎵",
+            "spotify": ""
+        	},
+        	"status-icons": {
+        		"paused": "⏸"
+        	},
+          // "player": "spotify",
+        	// "ignored-players": ["firefox"]
+        },
 
         "hyprland/workspaces": {
             "format": "{icon}",
@@ -18,24 +33,19 @@
                 "*": [ 1,2,3,4,5 ]
             }
         },
+
         "hyprland/window": {
-          "format": "👉 {title}",
+          "format": "{title}",
+          "max-length": 32,
+          "icon": true,
+          "icon-size": 18,
           "separate-outputs": true
         },
+
         "clock": {
-            "format": "{:%I:%M} ",
-            "interval": 1,   
-            "tooltip-format": "<tt>{calendar}</tt>",
-            "calendar": {
-                "format": {
-                    "today": "<span color='#fAfBfC'><b>{}</b></span>"
-                }
-            },
-            "actions": {
-                "on-click-right": "shift_down",
-                "on-click": "shift_up"
-            }
+            "format": "{:%d/%m %H:%M}",
         },
+
         "network": {
           "interface": "wlp2s0",
           "format": "{ifname}",
@@ -48,6 +58,7 @@
           "tooltip-format-disconnected": "Disconnected",
           "max-length": 50
         },
+
         "pulseaudio": {
           "format": "{volume}% {icon}",
           "format-bluetooth": "{volume}% {icon}",
@@ -68,6 +79,7 @@
           "on-click": "pavucontrol",
           "ignored-sinks": ["Easy Effects Sink"]
         },
+
         "custom/pacman": {
             "format": "{} 󰅢 ",
             "interval": 30,   
@@ -77,16 +89,19 @@
             "signal": 8,
             "tooltip": false,
         },
+
         "cpu": {
             "interval": 10,
             "format": "{usage}% ",
             "max-length": 10
         },
+
         "memory": {
           "interval": 30,
           "format": "{}% ",
           "max-length": 10
         },
+
         "temperature": {
           // "thermal-zone": 2,
           // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
