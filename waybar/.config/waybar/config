@@ -18,6 +18,8 @@
         	"status-icons": {
         		"paused": "⏸"
         	},
+          "title-len": 32,
+          "artist-len": 20,
           // "player": "spotify",
         	// "ignored-players": ["firefox"]
         },
