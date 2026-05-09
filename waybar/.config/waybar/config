@@ -40,7 +40,6 @@
     "modules-left": [
       "date",
       "clock",
-      "custom/pacman",
       "hyprland/window"
     ],
 
