@@ -253,6 +253,7 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("todoist"))
 -- Window/Layout Toggles
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Move focus with mainMod + arrow keys
@@ -382,4 +383,10 @@ hl.window_rule({
 		"monitor_h - " .. pip_h .. " - " .. pip_offest,
 	},
 	pin = true,
+})
+
+-- Border Styling
+hl.window_rule({
+	match = { fullscreen = true },
+	border_color = "rgb(AC88E8) rgb(C2A9EF)",
 })
