@@ -9,6 +9,12 @@
 -- Create your files separately and then require them like this:
 -- require("myColors")
 
+-------------------
+---- VARIABLES ----
+-------------------
+
+local pip_w, pip_h, pip_offest = 500, 300, 20
+
 ------------------
 ---- MONITORS ----
 ------------------
@@ -357,4 +363,21 @@ hl.window_rule({
 
 	move = "20 monitor_h-120",
 	float = true,
+})
+
+-- Specific Window Rules
+hl.window_rule({
+	name = "ignore-zen-popout",
+	match = {
+		class = "zen",
+		title = "Picture-in-Picture",
+	},
+	float = true,
+	monitor = "DP-1",
+	size = { pip_w, pip_h },
+	move = {
+		"monitor_w - " .. pip_w .. " - " .. pip_offest,
+		"monitor_h - " .. pip_h .. " - " .. pip_offest,
+	},
+	pin = true,
 })
