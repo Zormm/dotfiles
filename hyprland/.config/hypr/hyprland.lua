@@ -58,6 +58,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("todoist")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	hl.exec_cmd("protonmail-bridge")
 end)
 
 -------------------------------
@@ -333,6 +334,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 -- Example window rules that are useful
 
+hl.workspace_rule({ workspace = "special:graveyard", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "special:todoist", monitor = "DP-1" })
 
 hl.window_rule({
@@ -399,6 +401,15 @@ hl.window_rule({
 		class = "todoist",
 	},
 	workspace = "special:todoist",
+})
+
+-- Graveyard
+hl.window_rule({
+	name = "fix-proton-mail-bridge-to-graveyard",
+	match = {
+		class = "ch.proton.bridge-gui",
+	},
+	workspace = "special:graveyard",
 })
 
 -- Border Styling
