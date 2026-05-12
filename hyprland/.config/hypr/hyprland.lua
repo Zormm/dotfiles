@@ -172,6 +172,7 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 hl.config({
 	dwindle = {
 		preserve_split = true, -- You probably want this
+		-- smart_split = true,
 	},
 })
 
@@ -261,8 +262,11 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
-
--- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mainMod .. " + backslash", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind("ALT + TAB", hl.dsp.focus({ last = true }))
+hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "previous" }))
+hl.bind(mainMod .. " + equal", hl.dsp.window.resize({ x = 100, y = 0, relative = true }))
+hl.bind(mainMod .. " + minus", hl.dsp.window.resize({ x = -100, y = 0, relative = true }))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
@@ -333,7 +337,17 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
--- Example window rules that are useful
+-- Workspaces
+hl.workspace_rule({ workspace = "1", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "3", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "5", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "7", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "9", monitor = "DP-1" })
+
+hl.workspace_rule({ workspace = "2", monitor = "DP-2" })
+hl.workspace_rule({ workspace = "4", monitor = "DP-2" })
+hl.workspace_rule({ workspace = "6", monitor = "DP-2" })
+hl.workspace_rule({ workspace = "8", monitor = "DP-2" })
 
 hl.workspace_rule({ workspace = "special:graveyard", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "special:todoist", monitor = "DP-1" })
