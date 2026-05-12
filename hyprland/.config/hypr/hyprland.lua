@@ -252,6 +252,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("todoist"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("swaync-client -t -sw"))
 
 -- Window/Layout Toggles
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))

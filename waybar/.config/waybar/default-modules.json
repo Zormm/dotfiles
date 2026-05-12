@@ -11,11 +11,28 @@
       "paused": "⏸"
     },
     "title-len": 32,
-    "artist-len": 20,
-    // "player": "spotify",
-    // "ignored-players": ["firefox"]
+    "artist-len": 20
   },
-
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
@@ -24,10 +41,15 @@
       "empty": ""
     },
     "persistent-workspaces": {
-      "*": [ 1,2,3,4,5 ]
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     }
   },
-
   "hyprland/window": {
     "format": "{title}",
     "max-length": 32,
@@ -35,24 +57,21 @@
     "icon-size": 18,
     "separate-outputs": true
   },
-
   "clock": {
-    "format": "{:%d/%m %H:%M}",
+    "format": "{:%d/%m %H:%M}"
   },
-
   "network": {
     "interface": "wlp2s0",
     "format": "{ifname}",
     "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "", //An empty format will hide the module.
+    "format-disconnected": "",
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
   },
-
   "pulseaudio": {
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
@@ -67,45 +86,41 @@
       "phone-muted": "",
       "portable": "",
       "car": "",
-      "default": ["", ""]
+      "default": [
+        "",
+        ""
+      ]
     },
     "scroll-step": 1,
     "on-click": "pavucontrol",
-    "ignored-sinks": ["Easy Effects Sink"]
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ]
   },
-
   "custom/pacman": {
     "format": "{} 󰅢 ",
-    "interval": 30,   
+    "interval": 30,
     "exec": "checkupdates | wc -l",
     "exec-if": "exit 0",
     "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
     "signal": 8,
-    "tooltip": false,
+    "tooltip": false
   },
-
   "cpu": {
     "interval": 10,
     "format": "{usage}% ",
     "max-length": 10
   },
-
   "memory": {
     "interval": 30,
     "format": "{}% ",
     "max-length": 10
   },
-
   "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    // "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C ",
     "format": "{temperatureC}°C "
   },
-
   "tray": {
     "icon-size": 21,
-    "spacing": 10,
+    "spacing": 10
   }
 }

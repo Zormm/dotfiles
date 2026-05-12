@@ -4,18 +4,15 @@
     "position": "top",
     "output": "DP-1",
     "reload_style_on_change": true,
-
     "modules-left": [
       "date",
       "clock",
       "custom/pacman",
       "hyprland/window"
     ],
-
     "modules-center": [
       "hyprland/workspaces"
     ],
-
     "modules-right": [
       "mpris",
       "pulseaudio",
@@ -23,30 +20,26 @@
       "temperature",
       "cpu",
       "memory",
-      "tray"
+      "tray",
+      "custom/notification"
     ],
-
     "include": [
       "~/.config/waybar/default-modules.json"
     ]
-
   },
   {
     "layer": "top",
     "position": "top",
     "output": "DP-2",
     "reload_style_on_change": true,
-
     "modules-left": [
       "date",
       "clock",
       "hyprland/window"
     ],
-
     "modules-center": [
       "hyprland/workspaces"
     ],
-
     "modules-right": [
       "pulseaudio",
       "network",
@@ -55,7 +48,6 @@
       "memory",
       "tray"
     ],
-
     "include": [
       "~/.config/waybar/default-modules.json"
     ]
