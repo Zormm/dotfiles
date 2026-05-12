@@ -55,6 +55,7 @@ local browser = "zen-browser"
 --
 hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar & hyprpaper")
+	hl.exec_cmd("todoist")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 end)
@@ -247,11 +248,11 @@ hl.bind(
 	mainMod .. " + M",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
+
 -- Programs
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("todoist"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("swaync-client -t -sw"))
 
 -- Window/Layout Toggles
@@ -281,9 +282,9 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
--- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- Special workspace
+hl.bind(mainMod .. " + T", hl.dsp.workspace.toggle_special("todoist"))
+-- hl.bind("CTRL + ALT + A", hl.dsp.send_shortcut({ mods = "", key = "q", window = "class:todoist " }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -332,14 +333,15 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 -- Example window rules that are useful
 
-local suppressMaximizeRule = hl.window_rule({
+hl.workspace_rule({ workspace = "special:todoist", monitor = "DP-1" })
+
+hl.window_rule({
 	-- Ignore maximize requests from all apps. You'll probably like this.
 	name = "suppress-maximize-events",
 	match = { class = ".*" },
 
 	suppress_event = "maximize",
 })
--- suppressMaximizeRule:set_enabled(false)
 
 hl.window_rule({
 	-- Fix some dragging issues with XWayland
@@ -388,6 +390,15 @@ hl.window_rule({
 		"monitor_h - " .. pip_h .. " - " .. pip_offest,
 	},
 	pin = true,
+})
+
+-- Todoist
+hl.window_rule({
+	name = "fix-todoist-to-special-workspace",
+	match = {
+		class = "todoist",
+	},
+	workspace = "special:todoist",
 })
 
 -- Border Styling
