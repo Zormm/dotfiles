@@ -292,9 +292,12 @@ end
 hl.bind(mainMod .. " + T", hl.dsp.workspace.toggle_special("todoist"))
 -- hl.bind("CTRL + ALT + A", hl.dsp.send_shortcut({ mods = "", key = "q", window = "class:todoist " }))
 
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+-- Named Workspaces
+hl.bind(mainMod .. " + C", hl.dsp.focus({ workspace = "name:chat" }))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.move({ workspace = "name:chat" }))
+
+hl.bind(mainMod .. " + X", hl.dsp.focus({ workspace = "name:media" }))
+hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "name:media" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -337,15 +340,17 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 -- Workspaces
 hl.workspace_rule({ workspace = "1", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "2", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "3", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "4", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "5", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "6", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "7", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "8", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "9", monitor = "DP-1" })
 
-hl.workspace_rule({ workspace = "2", monitor = "DP-2" })
-hl.workspace_rule({ workspace = "4", monitor = "DP-2" })
-hl.workspace_rule({ workspace = "6", monitor = "DP-2" })
-hl.workspace_rule({ workspace = "8", monitor = "DP-2" })
+hl.workspace_rule({ workspace = "name:chat", monitor = "DP-2" })
+hl.workspace_rule({ workspace = "name:media", monitor = "DP-2" })
 
 hl.workspace_rule({ workspace = "special:graveyard", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "special:todoist", monitor = "DP-1" })
@@ -391,6 +396,7 @@ hl.window_rule({
 })
 
 -- Specific Window Rules
+-- Zen PiP
 hl.window_rule({
 	name = "ignore-zen-popout",
 	match = {
@@ -423,6 +429,41 @@ hl.window_rule({
 		class = "ch.proton.bridge-gui",
 	},
 	workspace = "special:graveyard",
+})
+
+-- Chat apps
+hl.window_rule({
+	name = "fix-whatsapp-to-chat",
+	match = {
+		class = "elecwhat",
+	},
+	workspace = "name:chat",
+})
+
+hl.window_rule({
+	name = "fix-discord-to-chat",
+	match = {
+		class = "discord",
+	},
+	workspace = "name:chat",
+})
+
+hl.window_rule({
+	name = "fix-signal-to-chat",
+	match = {
+		class = "signal-desktop",
+	},
+	workspace = "name:chat",
+})
+
+-- Media apps
+
+hl.window_rule({
+	name = "fix-spotfiy-to-media",
+	match = {
+		class = "spotify-launcher",
+	},
+	workspace = "name:media",
 })
 
 -- Border Styling
