@@ -260,6 +260,7 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 hl.bind(mainMod .. " + backslash", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind("ALT + TAB", hl.dsp.focus({ last = true }))
 hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "previous" }))
