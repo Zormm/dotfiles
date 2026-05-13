@@ -23,8 +23,6 @@ local pip_w, pip_h, pip_offest = 500, 300, 20
 hl.monitor({
 	output = "DP-1",
 	mode = "3440x1440@240",
-	position = "0x0",
-	scale = "1",
 })
 
 hl.monitor({
@@ -321,8 +319,6 @@ hl.bind(
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
