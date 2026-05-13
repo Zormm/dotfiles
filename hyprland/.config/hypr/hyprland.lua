@@ -54,7 +54,7 @@ local browser = "zen-browser"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
-	hl.exec_cmd("waybar & hyprpaper")
+	hl.exec_cmd("waybar & hyprpaper & hyperidle")
 	hl.exec_cmd("todoist")
 	hl.exec_cmd("spotify-launcher", { monitor = "DP-2" })
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
