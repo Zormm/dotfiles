@@ -295,7 +295,7 @@ end
 
 -- Special workspace
 hl.bind(mainMod .. " + T", hl.dsp.workspace.toggle_special("todoist"))
--- hl.bind("CTRL + ALT + A", hl.dsp.send_shortcut({ mods = "", key = "q", window = "class:todoist " }))
+hl.bind("CTRL + ALT + A", hl.dsp.send_shortcut({ mods = "", key = "q", window = "class:todoist " }))
 
 -- Named Workspaces
 hl.bind(mainMod .. " + C", hl.dsp.focus({ workspace = "name:Chat" }))
