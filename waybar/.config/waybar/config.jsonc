@@ -42,10 +42,6 @@
     ],
     "modules-right": [
       "pulseaudio",
-      "network",
-      "temperature",
-      "cpu",
-      "memory",
       "tray"
     ],
     "include": [
