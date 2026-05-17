@@ -33,6 +33,7 @@
   "notification-window-preferred-output": "DP-1",
   "widgets": [
     "inhibitors",
+    "buttons-grid",
     "dnd",
     "mpris",
     "volume",
@@ -72,6 +73,30 @@
       "show-per-app": true,
       "show-per-app-icon": true,
       "show-per-app-label": true
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "󰐥",
+          "command": "shutdown -P 0"
+        },
+        {
+          "label": "󰜉",
+          "command": "reboot"
+        },
+        {
+          "label": "󰌾",
+          "command": "hyprlock"
+        },
+        {
+          "label": "󰍃",
+          "command": "hyprshutdown"
+        },
+        {
+          "label": "󰚰",
+          "command": "sudo pacman -Ryu"
+        }
+      ]
     }
   }
 }
