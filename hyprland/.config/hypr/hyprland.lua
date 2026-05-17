@@ -59,7 +59,7 @@ local browser = "zen-browser"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar & hyprpaper & hyperidle")
 	hl.exec_cmd("todoist")
-	hl.exec_cmd("spotify-launcher", { monitor = "DP-2" })
+	hl.exec_cmd("spotify-launcher")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	hl.exec_cmd("protonmail-bridge")
@@ -298,17 +298,17 @@ hl.bind(mainMod .. " + T", hl.dsp.workspace.toggle_special("todoist"))
 -- hl.bind("CTRL + ALT + A", hl.dsp.send_shortcut({ mods = "", key = "q", window = "class:todoist " }))
 
 -- Named Workspaces
-hl.bind(mainMod .. " + C", hl.dsp.focus({ workspace = "name:chat" }))
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.move({ workspace = "name:chat" }))
+hl.bind(mainMod .. " + C", hl.dsp.focus({ workspace = "name:Chat" }))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.move({ workspace = "name:Chat" }))
 
-hl.bind(mainMod .. " + X", hl.dsp.focus({ workspace = "name:media" }))
-hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "name:media" }))
+hl.bind(mainMod .. " + X", hl.dsp.focus({ workspace = "name:Media" }))
+hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "name:Media" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Laptop multimedia keys for volume and LCD brightness
+-- Laptop multiMedia keys for volume and LCD brightness
 hl.bind(
 	"XF86AudioRaiseVolume",
 	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
@@ -337,14 +337,11 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 --------------------------------
----- WINDOWS AND WORKSPACES ----
---------------------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
+---- WINDOWS AND WORKSPACES ---- ----------------------------- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
 -- Workspaces
-hl.workspace_rule({ workspace = "1", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "1", monitor = "DP-1", default = true })
 hl.workspace_rule({ workspace = "2", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "3", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "4", monitor = "DP-1" })
@@ -354,8 +351,8 @@ hl.workspace_rule({ workspace = "7", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "8", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "9", monitor = "DP-1" })
 
-hl.workspace_rule({ workspace = "name:chat", monitor = "DP-2" })
-hl.workspace_rule({ workspace = "name:media", monitor = "DP-2" })
+hl.workspace_rule({ workspace = "name:Chat", monitor = "DP-2" })
+hl.workspace_rule({ workspace = "name:Media", monitor = "DP-2" })
 
 hl.workspace_rule({ workspace = "special:graveyard", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "special:todoist", monitor = "DP-1" })
@@ -438,37 +435,37 @@ hl.window_rule({
 
 -- Chat apps
 hl.window_rule({
-	name = "fix-whatsapp-to-chat",
+	name = "fix-whatsapp-to-Chat",
 	match = {
 		class = "elecwhat",
 	},
-	workspace = "name:chat",
+	workspace = "name:Chat",
 })
 
 hl.window_rule({
-	name = "fix-discord-to-chat",
+	name = "fix-discord-to-Chat",
 	match = {
 		class = "discord",
 	},
-	workspace = "name:chat",
+	workspace = "name:Chat",
 })
 
 hl.window_rule({
-	name = "fix-signal-to-chat",
+	name = "fix-signal-to-Chat",
 	match = {
 		class = "signal-desktop",
 	},
-	workspace = "name:chat",
+	workspace = "name:Chat",
 })
 
 -- Media apps
 
 hl.window_rule({
-	name = "fix-spotfiy-to-media",
+	name = "fix-spotfiy-to-Media",
 	match = {
-		class = "spotify-launcher",
+		class = "Spotify",
 	},
-	workspace = "name:media",
+	workspace = "name:Media",
 })
 
 -- Border Styling
