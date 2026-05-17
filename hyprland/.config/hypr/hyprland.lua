@@ -27,9 +27,14 @@ hl.monitor({
 
 hl.monitor({
 	output = "DP-2",
-	mode = "2560x1440@99.95",
+	mode = "2560x1440",
 	position = "-1440x-450",
 	transform = 1,
+})
+
+hl.monitor({
+	output = "HDMI-A-1",
+	disabled = true,
 })
 
 ---------------------
