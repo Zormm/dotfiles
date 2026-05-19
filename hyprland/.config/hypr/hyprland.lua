@@ -23,18 +23,32 @@ local pip_w, pip_h, pip_offest = 500, 300, 20
 hl.monitor({
 	output = "DP-1",
 	mode = "3440x1440@240",
+	scale = "auto",
+	vrr = 3,
 })
 
 hl.monitor({
 	output = "DP-2",
 	mode = "2560x1440",
 	position = "-1440x-450",
+	scale = "auto",
 	transform = 1,
 })
 
 hl.monitor({
 	output = "HDMI-A-1",
+	position = "auto-center-right",
+	mode = "3860x2160@120",
+	scale = "2",
+	vrr = 3,
 	disabled = true,
+})
+
+hl.monitor({
+	output = "",
+	mode = "preferred",
+	position = "auto",
+	scale = 1,
 })
 
 ---------------------
@@ -270,8 +284,10 @@ hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen
 hl.bind(mainMod .. " + backslash", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind("ALT + TAB", hl.dsp.focus({ last = true }))
 hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "previous" }))
+hl.bind(mainMod .. " +SHIFT + TAB", hl.dsp.workspace.move({ monitor = "+1" }))
 hl.bind(mainMod .. " + equal", hl.dsp.window.resize({ x = 100, y = 0, relative = true }))
 hl.bind(mainMod .. " + minus", hl.dsp.window.resize({ x = -100, y = 0, relative = true }))
+hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("~/.config/hypr/scripts/tv_mode.sh"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
