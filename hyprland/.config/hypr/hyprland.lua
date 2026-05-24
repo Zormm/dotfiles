@@ -487,6 +487,14 @@ hl.window_rule({
 	workspace = "name:Chat",
 })
 
+hl.window_rule({
+	name = "fix-element-to-Chat",
+	match = {
+		class = "element",
+	},
+	workspace = "name:Chat",
+})
+
 -- Media apps
 
 hl.window_rule({
