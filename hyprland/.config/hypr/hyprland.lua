@@ -73,7 +73,7 @@ local browser = "zen-browser"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar & hyprpaper & hyperidle")
 	hl.exec_cmd("todoist")
-	hl.exec_cmd("spotify-launcher")
+	hl.exec_cmd("feishin")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	hl.exec_cmd("protonmail-bridge")
@@ -369,6 +369,7 @@ hl.workspace_rule({ workspace = "9", monitor = "DP-1" })
 
 hl.workspace_rule({ workspace = "name:Chat", monitor = "DP-2" })
 hl.workspace_rule({ workspace = "name:Media", monitor = "DP-2" })
+hl.workspace_rule({ workspace = "name:Media", monitor = "DP-2", on_created_empty = "feishin" })
 
 hl.workspace_rule({ workspace = "special:graveyard", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "special:todoist", monitor = "DP-1" })
@@ -480,6 +481,14 @@ hl.window_rule({
 	name = "fix-spotfiy-to-Media",
 	match = {
 		class = "Spotify",
+	},
+	workspace = "name:Media",
+})
+
+hl.window_rule({
+	name = "fix-feishin-to-Media",
+	match = {
+		class = "feishin",
 	},
 	workspace = "name:Media",
 })
