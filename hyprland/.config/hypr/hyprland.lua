@@ -320,6 +320,8 @@ hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.move({ workspace = "name:Chat" 
 hl.bind(mainMod .. " + X", hl.dsp.focus({ workspace = "name:Media" }))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "name:Media" }))
 
+hl.bind(mainMod .. " + G", hl.dsp.focus({ workspace = "name:Gaming" }))
+hl.bind(mainMod .. " + SHIFT + G", hl.dsp.window.move({ workspace = "name:Gaming" }))
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
@@ -367,8 +369,8 @@ hl.workspace_rule({ workspace = "7", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "8", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "9", monitor = "DP-1" })
 
-hl.workspace_rule({ workspace = "name:Chat", monitor = "DP-2" })
-hl.workspace_rule({ workspace = "name:Media", monitor = "DP-2" })
+hl.workspace_rule({ workspace = "name:Gaming", monitor = "DP-1", on_created_empty = "steam" })
+hl.workspace_rule({ workspace = "name:Chat", monitor = "DP-2", on_created_empty = "elecwhat" })
 hl.workspace_rule({ workspace = "name:Media", monitor = "DP-2", on_created_empty = "feishin" })
 
 hl.workspace_rule({ workspace = "special:graveyard", monitor = "DP-1" })
@@ -448,6 +450,16 @@ hl.window_rule({
 		class = "ch.proton.bridge-gui",
 	},
 	workspace = "special:graveyard",
+})
+
+-- Gaming apps
+hl.window_rule({
+	name = "float-all-gaming-apps",
+	match = {
+		workspace = "name:Gaming",
+	},
+
+	float = true,
 })
 
 -- Chat apps
