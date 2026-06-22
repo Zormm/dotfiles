@@ -4,3 +4,6 @@ if status is-interactive
 end
 
 export PATH="$HOME/.local/bin:$PATH"
+
+zoxide init fish | source
+alias cd='z'
