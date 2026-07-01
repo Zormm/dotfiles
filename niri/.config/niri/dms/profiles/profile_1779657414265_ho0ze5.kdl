@@ -13,5 +13,11 @@ output "DP-1" {
     position x=1440 y=558
     variable-refresh-rate on-demand=true
     focus-at-startup
+    hot-corners {
+        off
+    }
+    layout {
+        always-center-single-column
+    }
 }
 

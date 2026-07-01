@@ -1,0 +1,61 @@
+window-rule {
+    match app-id=r#"org.quickshell$"#
+    open-floating true
+}
+
+window-rule {
+  match app-id="^zen$" title="^Picture-in-Picture$"
+  open-floating true
+  open-on-output "DP-1"
+  open-focused false
+  default-window-height { fixed 270; }
+  default-column-width { fixed 480; }
+  default-floating-position x=32 y=32 relative-to="bottom-right"
+}
+
+window-rule {
+  match title="^Steam Big Picture$"
+  open-fullscreen true
+}
+
+window-rule {
+  match app-id="^zen$"
+  draw-border-with-background false
+}
+
+window-rule {
+  match app-id="^steam_app_\\d+$"
+  open-fullscreen true
+}
+
+window-rule {
+  match app-id="^discord$"
+  match app-id="^Element$"
+  match app-id="^elecwhat$"
+
+  open-on-workspace "chat"
+}
+
+window-rule {
+  match app-id="^feishin$"
+  match app-id="^Spotify$"
+
+  open-on-workspace "media"
+}
+// Example: block out two password managers from screen capture.
+// (This example rule is commented out with a "/-" in front.)
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+window-rule {
+    // opacity 0.95
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
