@@ -467,6 +467,12 @@
     "DP-2": {
       "hotCorners": {
         "off": true
+      },
+      "layout": {
+        "defaultColumnWidth": {
+          "type": "proportion",
+          "value": 1
+        }
       }
     }
   },
