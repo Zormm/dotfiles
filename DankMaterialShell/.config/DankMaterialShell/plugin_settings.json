@@ -1,0 +1,19 @@
+{
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "dankGifSearch": {
+    "enabled": true
+  },
+  "emojiLauncher": {
+    "enabled": true,
+    "recentEmojis": "❤️,😂,🤯,😭,😢,💀"
+  },
+  "niriWindows": {
+    "enabled": true
+  },
+  "niriScreenshot": {
+    "enabled": true
+  }
+}
