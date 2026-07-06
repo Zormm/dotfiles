@@ -142,6 +142,9 @@ binds {
     Mod+C { focus-workspace "chat"; }
     Mod+Shift+C { move-column-to-workspace "chat"; }
 
+    Mod+G { focus-workspace "gaming"; }
+    Mod+Shift+G { move-column-to-workspace "gaming"; }
+
     // Switches focus between the current and the previous workspace.
     Mod+Tab { focus-workspace-previous; }
 

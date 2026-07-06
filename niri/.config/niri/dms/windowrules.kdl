@@ -42,6 +42,13 @@ window-rule {
 
   open-on-workspace "media"
 }
+
+window-rule {
+  match app-id="^steam_app_\\d+$"
+  match app-id="^steam$"
+
+  open-on-workspace "gaming"
+}
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {

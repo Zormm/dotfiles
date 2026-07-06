@@ -152,6 +152,10 @@
     "media": {
       "type": "icon",
       "value": "movie"
+    },
+    "gaming": {
+      "type": "icon",
+      "value": "sports_esports"
     }
   },
   "waveProgressEnabled": true,
