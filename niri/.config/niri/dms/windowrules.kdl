@@ -25,7 +25,10 @@ window-rule {
 
 window-rule {
   match app-id="^steam_app_\\d+$"
+  match app-id="^Minecraft"
+
   open-fullscreen true
+  open-on-workspace "gaming"
 }
 
 window-rule {
@@ -44,7 +47,6 @@ window-rule {
 }
 
 window-rule {
-  match app-id="^steam_app_\\d+$"
   match app-id="^steam$"
 
   open-on-workspace "gaming"
