@@ -8,12 +8,15 @@
   },
   "emojiLauncher": {
     "enabled": true,
-    "recentEmojis": "📷,😔,❤️,😂,🤯,😭,😢,💀"
+    "recentEmojis": "😔,👍,👀,😭,📷,❤️,😂,🤯,😢,💀"
   },
   "niriWindows": {
     "enabled": true
   },
   "niriScreenshot": {
+    "enabled": true
+  },
+  "amdGpuMonitor": {
     "enabled": true
   }
 }
