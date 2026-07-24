@@ -25,7 +25,7 @@ input {
     keyboard {
         xkb {
             layout "eu"
-            options "caps:swapescape"
+            options "caps:escape"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
