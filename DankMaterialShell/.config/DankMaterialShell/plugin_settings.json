@@ -16,7 +16,7 @@
   "niriScreenshot": {
     "enabled": true
   },
-  "amdGpuMonitor": {
+  "amdGpuMonitorRevive": {
     "enabled": true
   }
 }
