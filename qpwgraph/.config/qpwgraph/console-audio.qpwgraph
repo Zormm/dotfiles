@@ -1,0 +1,82 @@
+<!DOCTYPE patchbay>
+<patchbay name="console-audio" version="1.0.4">
+ <items>
+  <item node-type="alsa" port-type="alsa-midi">
+   <output node="129:Client-129" port="2:port-2"/>
+   <input node="16:nanoKONTROL2" port="0:nanoKONTROL2 _ CTRL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Webcam C270 Mono" port="USB Device 0x46d 0x825:capture_MONO"/>
+   <input node="PulseAudio Volume Control-3" port="PulseAudio Volume Control:input_MONO"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Ryzen HD Audio Controller Analog Stereo" port="ALC897 Analog:capture_FL"/>
+   <input node="Ryzen HD Audio Controller Analog Stereo" port="ALC897 Analog:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Zen" port="Zen:output_FR"/>
+   <input node="Ryzen HD Audio Controller Analog Stereo" port="ALC897 Analog:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="UMC202HD 192k Pro" port="UMC202HD 192k:capture_AUX0"/>
+   <input node="PulseAudio Volume Control-5" port="PulseAudio Volume Control:input_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="UMC202HD 192k Pro" port="UMC202HD 192k:capture_AUX1"/>
+   <input node="PulseAudio Volume Control-5" port="PulseAudio Volume Control:input_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Ryzen HD Audio Controller Analog Stereo" port="ALC897 Analog:capture_FR"/>
+   <input node="PulseAudio Volume Control-1" port="PulseAudio Volume Control:input_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="UMC202HD 192k Pro [Monitor]" port="UMC202HD 192k:monitor_AUX0"/>
+   <input node="PulseAudio Volume Control-4" port="PulseAudio Volume Control:input_FL"/>
+  </item>
+  <item node-type="alsa" port-type="alsa-midi">
+   <output node="16:nanoKONTROL2" port="0:nanoKONTROL2 _ CTRL"/>
+   <input node="129:Client-129" port="3:port-3"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Ryzen HD Audio Controller Analog Stereo" port="ALC897 Analog:capture_FR"/>
+   <input node="Ryzen HD Audio Controller Analog Stereo" port="ALC897 Analog:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Zen" port="Zen:output_FR"/>
+   <input node="PulseAudio Volume Control-2" port="PulseAudio Volume Control:input_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="UMC202HD 192k Pro [Monitor]" port="UMC202HD 192k:monitor_AUX1"/>
+   <input node="PulseAudio Volume Control-4" port="PulseAudio Volume Control:input_FR"/>
+  </item>
+  <item node-type="alsa" port-type="alsa-midi">
+   <output node="16:nanoKONTROL2" port="0:nanoKONTROL2 _ CTRL"/>
+   <input node="128:Client-128" port="3:port-3"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Zen" port="Zen:output_FL"/>
+   <input node="Ryzen HD Audio Controller Analog Stereo" port="ALC897 Analog:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Ryzen HD Audio Controller Analog Stereo [Monitor]" port="ALC897 Analog:monitor_FR"/>
+   <input node="PulseAudio Volume Control" port="PulseAudio Volume Control:input_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Zen" port="Zen:output_FL"/>
+   <input node="PulseAudio Volume Control-2" port="PulseAudio Volume Control:input_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Ryzen HD Audio Controller Analog Stereo" port="ALC897 Analog:capture_FL"/>
+   <input node="PulseAudio Volume Control-1" port="PulseAudio Volume Control:input_FL"/>
+  </item>
+  <item node-type="alsa" port-type="alsa-midi">
+   <output node="128:Client-128" port="2:port-2"/>
+   <input node="16:nanoKONTROL2" port="0:nanoKONTROL2 _ CTRL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Ryzen HD Audio Controller Analog Stereo [Monitor]" port="ALC897 Analog:monitor_FL"/>
+   <input node="PulseAudio Volume Control" port="PulseAudio Volume Control:input_FL"/>
+  </item>
+ </items>
+</patchbay>
+

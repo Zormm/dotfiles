@@ -152,3 +152,20 @@ rules:
         target:
           type: PlaybackStream
           name: We Were Here Together.exe
+  # Line In
+  - midiMessage:
+      deviceName: Korg nanoKontrol2
+      deviceControlPath: Group6/Slider
+    actions:
+      - type: SetVolume
+        target:
+          type: InputDevice
+          name: Ryzen HD Audio Controller Analog Stereo
+  - midiMessage:
+      deviceName: Korg nanoKontrol2
+      deviceControlPath: Group6/Mute
+    actions:
+      - type: ToggleMute
+        target:
+          type: InputDevice
+          name: Ryzen HD Audio Controller Analog Stereo
