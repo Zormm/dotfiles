@@ -5,6 +5,7 @@ end
 
 # export PATH="$HOME/.local/bin:$PATH"
 # export PATH="$HOME/bun/bin:$PATH"
+export SSH_AUTH_SOCK=/home/zormi/.ssh/proton-pass-agent.sock
 
 fish_add_path "$HOME/.bun/bin"
 fish_add_path "$HOME/.local/bin"
