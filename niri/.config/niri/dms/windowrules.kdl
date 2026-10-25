@@ -20,7 +20,7 @@ window-rule {
 
 // @id=dms_rule_2 @name=
 window-rule {
-    match title="^Steam Big Picture$"
+    match title="^Steam Big Picture Mode$"
     open-fullscreen true
 }
 
