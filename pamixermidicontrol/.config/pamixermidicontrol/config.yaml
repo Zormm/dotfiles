@@ -89,7 +89,7 @@ rules:
       - type: SetVolume
         target:
           type: PlaybackStream
-          name: mpv
+          name: feishin
   - midiMessage:
       deviceName: Korg nanoKontrol2
       deviceControlPath: Group3/Mute
@@ -101,7 +101,7 @@ rules:
       - type: ToggleMute
         target:
           type: PlaybackStream
-          name: mpv
+          name: feishin
   # Discord
   - midiMessage:
       deviceName: Korg nanoKontrol2
